@@ -8,4 +8,4 @@ require "stock_cli"
 # puts Stock.all
 
 cli = Cli.new
-cli.call
+cli.run

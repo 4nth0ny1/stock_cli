@@ -1,6 +1,6 @@
 class Stock 
 
-    attr_accessor :symbol, :companyName, :close, :volume, :peRatio, :marketCap
+    attr_reader :symbol, :companyName, :close, :volume, :peRatio, :marketCap
 
     @@all = []
 
@@ -19,4 +19,29 @@ class Stock
         @@all 
     end 
 
+    private 
+
+    def symbol=(symbol)
+        @symbol = symbol
+    end 
+
+    def companyName=(companyName)
+        @companyName = companyName
+    end 
+     
+    def close=(close)
+        @close = close
+    end
+    
+    def volume=(volume)
+        @volume = volume
+    end 
+
+    def peRatio=(peRatio)
+        @peRatio = peRatio
+    end 
+
+    def marketCap=(marketCap)
+        @marketCap = marketCap
+    end 
 end 
