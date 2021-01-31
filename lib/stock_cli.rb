@@ -1,9 +1,7 @@
-require "stock_cli/version"
 require "pry"
-## require all files here
-## require all "Toolsets/libraries"
+require "httparty"
 
-module StockCli
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require "stock_cli/version"
+
+require_relative "./stock_cli/stock"
+require_relative "./stock_cli/api"

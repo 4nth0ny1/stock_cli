@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require "bunder/setup"
+require "stock_cli"
+
+# api = Api.new('https://cloud.iexapis.com/stable/stock', 'batch?types=quote,news,chart&range=1m&last=10&token=pk_64a3b816353a4d439a1ab35e94c99d32')
+# api.search_company_by_symbol("aapl")
+# puts Stock.all
+
+cli = Cli.new
+cli.call
