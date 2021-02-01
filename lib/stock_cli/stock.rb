@@ -44,4 +44,5 @@ class Stock
     def marketCap=(marketCap)
         @marketCap = marketCap
     end 
+    
 end 

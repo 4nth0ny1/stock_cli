@@ -5,3 +5,4 @@ require "stock_cli/version"
 
 require_relative "./stock_cli/stock"
 require_relative "./stock_cli/api"
+require_relative "./stock_cli/cli"
