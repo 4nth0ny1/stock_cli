@@ -1,3 +1,5 @@
+require "pry"
+
 class Stock 
 
     attr_reader :symbol, :companyName, :close, :volume, :peRatio, :marketCap
@@ -44,5 +46,5 @@ class Stock
     def marketCap=(marketCap)
         @marketCap = marketCap
     end 
-    
+
 end 
