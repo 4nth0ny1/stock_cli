@@ -10,16 +10,19 @@ class Api
     def search_company_by_symbol(input)
         req_url = "#{url}/#{input}/#{url_2}"
         data = HTTParty.get(req_url)
-
+        # binding.pry
         if data["quote"] 
         
             stock_hash = {
                 symbol: data["quote"]["symbol"],
                 companyName: data["quote"]["companyName"],
+                primaryExchange: data["quote"]["primaryExchange"],
                 close: data["quote"]["close"],
                 volume: data["quote"]["volume"],
                 peRatio: data["quote"]["peRatio"],
-                marketCap: data["quote"]["marketCap"]
+                marketCap: data["quote"]["marketCap"],
+                week52High: data["quote"]["week52High"],
+                week52Low: data["quote"]["week52Low"]
             }   
     
             stock = Stock.new(stock_hash) 

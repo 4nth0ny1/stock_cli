@@ -10,7 +10,7 @@ class Cli
         puts "Welcome to Stock_cli"
     end 
 
-    def basic_info(s)
+    def basic_info(s, input)
         if s.is_a?(Stock)
             puts ""
             puts s.companyName 
@@ -18,6 +18,12 @@ class Cli
             puts s.symbol
             print "Price: $"
             puts s.close 
+            print "Primary Exchange: "
+            puts s.primaryExchange.capitalize
+        elsif input == "quit"
+            puts ""
+            puts "Thanks for stopping by."
+            Kernel.exit!
         else  
             puts ""  
             puts "Invalid Entry. Try again"
@@ -34,13 +40,18 @@ class Cli
             puts s.volume
             print "P/E Ratio: "
             puts s.peRatio
+            print "52-Week High: "
+            puts s.week52High
+            print "52-Week Low: "
+            puts s.week52Low
             run
         elsif second_input == "new stock"
             run
-        elsif second_input == "exit"
+        elsif second_input == "quit"
+            puts ""
             puts "Thanks for stopping by."
             Kernel.exit!
-        elsif second_input != "exit" ||second_input != "new stock" ||second_input != "yes"
+        elsif second_input != "quit" ||second_input != "new stock" ||second_input != "yes"
             puts "Invalid Entry. Try again"
             run
         end
@@ -52,11 +63,11 @@ class Cli
         print "Enter a stock symbol: "
         input = gets.strip.downcase
         s = stock_api.search_company_by_symbol(input)
-        basic_info(s)
+        basic_info(s, input)
         puts ""
         puts "Type 'yes' for more information."
         puts "Type 'new stock' to choose another stock."
-        puts "Type 'exit' to exit the program."
+        puts "Type 'quit' to exit the program."
         puts ""
         second_input = gets.strip.downcase
         more_info(second_input, s)
