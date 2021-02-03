@@ -22,9 +22,13 @@ class Api
                 peRatio: data["quote"]["peRatio"],
                 marketCap: data["quote"]["marketCap"],
                 week52High: data["quote"]["week52High"],
-                week52Low: data["quote"]["week52Low"]
-            }   
-    
+                week52Low: data["quote"]["week52Low"],   
+                headline: data["news"].first["headline"],
+                source: data["news"].first["source"],
+                url: data["news"].first["url"],
+                summary: data["news"].first["summary"]
+            }  
+            
             stock = Stock.new(stock_hash) 
             stock
         end

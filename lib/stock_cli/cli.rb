@@ -23,6 +23,7 @@ class Cli
         elsif input == "quit"
             puts ""
             puts "Thanks for stopping by."
+            puts ""
             Kernel.exit!
         else  
             puts ""  
@@ -33,6 +34,8 @@ class Cli
 
     def more_info(second_input, s)
         if second_input == "yes"
+
+            ## financials
             puts ""
             print "Market Cap: "
             puts s.marketCap
@@ -44,12 +47,26 @@ class Cli
             puts s.week52High
             print "52-Week Low: "
             puts s.week52Low
+            
+            ##news 
+            puts ""
+            puts "News"
+            print "Latest Headline: "
+            puts s.headline
+            print "Source: "
+            puts s.source
+            print "Summary: "
+            puts s.summary
+            print "URL: "
+            puts s.url
+
             run
         elsif second_input == "new stock"
             run
         elsif second_input == "quit"
             puts ""
             puts "Thanks for stopping by."
+            puts ""
             Kernel.exit!
         elsif second_input != "quit" ||second_input != "new stock" ||second_input != "yes"
             puts "Invalid Entry. Try again"

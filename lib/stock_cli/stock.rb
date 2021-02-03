@@ -2,7 +2,7 @@ require "pry"
 
 class Stock 
 
-    attr_reader :symbol, :companyName, :close, :volume, :peRatio, :marketCap, :primaryExchange, :week52High, :week52Low
+    attr_reader :symbol, :companyName, :close, :volume, :peRatio, :marketCap, :primaryExchange, :week52High, :week52Low, :headline, :source, :url, :summary
 
     @@all = []
 
@@ -59,4 +59,19 @@ class Stock
         @week52Low = week52Low
     end
 
+    def headline=(headline)
+        @headline = headline
+    end 
+
+    def source=(source)
+        @source = source
+    end 
+
+    def url=(url)
+        @url = url
+    end 
+
+    def summary=(summary)
+        @summary = summary 
+    end 
 end 
