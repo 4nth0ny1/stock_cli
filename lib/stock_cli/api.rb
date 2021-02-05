@@ -12,13 +12,15 @@ class Api
         data = HTTParty.get(req_url)
         # binding.pry
         if data["quote"] 
-        
+       
             stock_hash = {
                 symbol: data["quote"]["symbol"],
                 companyName: data["quote"]["companyName"],
                 primaryExchange: data["quote"]["primaryExchange"],
                 close: data["quote"]["close"],
+                latestPrice: data["quote"]["latestPrice"],
                 volume: data["quote"]["volume"],
+                avgTotalVolume: data["quote"]["avgTotalVolume"],
                 peRatio: data["quote"]["peRatio"],
                 marketCap: data["quote"]["marketCap"],
                 week52High: data["quote"]["week52High"],

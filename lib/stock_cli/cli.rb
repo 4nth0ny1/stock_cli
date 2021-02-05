@@ -16,8 +16,10 @@ class Cli
             puts s.companyName 
             print "Symbol: "
             puts s.symbol
-            print "Price: $"
+            print "Closing Price: $"
             puts s.close 
+            print "Latest Price: $"
+            puts s.latestPrice
             print "Primary Exchange: "
             puts s.primaryExchange.capitalize
         elsif input == "quit"
@@ -41,6 +43,8 @@ class Cli
             puts s.marketCap
             print "Volume: "
             puts s.volume
+            print "Avg Volume: "
+            puts s.avgTotalVolume
             print "P/E Ratio: "
             puts s.peRatio
             print "52-Week High: "
@@ -90,5 +94,7 @@ class Cli
         more_info(second_input, s)
     end 
 end 
+
+
 
 

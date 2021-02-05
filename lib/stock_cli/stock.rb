@@ -2,7 +2,7 @@ require "pry"
 
 class Stock 
 
-    attr_reader :symbol, :companyName, :close, :volume, :peRatio, :marketCap, :primaryExchange, :week52High, :week52Low, :headline, :source, :url, :summary
+    attr_reader :symbol, :companyName, :close, :volume, :peRatio, :marketCap, :primaryExchange, :week52High, :week52Low, :headline, :source, :url, :summary, :latestPrice, :avgTotalVolume
 
     @@all = []
 
@@ -73,5 +73,13 @@ class Stock
 
     def summary=(summary)
         @summary = summary 
+    end 
+
+    def latestPrice=(latestPrice)
+        @latestPrice = latestPrice
+    end
+
+    def avgTotalVolume=(avgTotalVolume)
+        @avgTotalVolume = avgTotalVolume
     end 
 end 
