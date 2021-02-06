@@ -78,6 +78,12 @@ class Cli
         end
     end
 
+    def portfolio
+        Stock.all.each do |s|
+           puts "#{s.companyName} - #{s.latestPrice} - #{s.peRatio} - #{s.avgTotalVolume}"
+        end 
+    end 
+
     def run 
         stock_api = Api.new()
         puts ""
@@ -85,6 +91,9 @@ class Cli
         input = gets.strip.downcase
         s = stock_api.search_company_by_symbol(input)
         basic_info(s, input)
+        puts ""
+        puts "Portfolio"
+        portfolio
         puts ""
         puts "Type 'yes' for more information."
         puts "Type 'new stock' to choose another stock."

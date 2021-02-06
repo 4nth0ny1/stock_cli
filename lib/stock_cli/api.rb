@@ -10,7 +10,7 @@ class Api
     def search_company_by_symbol(input)
         req_url = "#{url}/#{input}/#{url_2}"
         data = HTTParty.get(req_url)
-        # binding.pry
+        
         if data["quote"] 
        
             stock_hash = {
